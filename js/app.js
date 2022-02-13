@@ -20,7 +20,7 @@ const list=document.getElementById('book-list');
 //pravi se element tr za red u tabeli, a zatim se redu dodaju elementi uzeti iz objekta
 const row=document.createElement('tr'); 
 //u napravljeni red se smestaju zatim podaci uz knjige koja je prosledjena kao objekat metodi addBookToList
-row.innerHtml=`     
+row.innerHTML=`     
 <td>${book.title}</td>
 <td>${book.author}</td>
 <td>${book.isnb}</td>
@@ -63,11 +63,11 @@ deleteBook(target){
 //metoda koja prazni citavo polje
 //pristupamo elementima forme i brisemo njihove vrednosti
 clearFields(){
-    if(confirm("Da li ste sigurni")){
+  
     document.getElementById('title').value='';
     document.getElementById('author').value='';
-    document.getElementById('isnb').value='';
-    }
+    document.getElementById('isbn').value='';
+    
 }
 }
 
@@ -77,7 +77,7 @@ document.getElementById('book-form').addEventListener('submit',(e)=>{
 //uzimaju vrednosti iz forme
 const title=document.getElementById('title').value;
 const author=document.getElementById('author').value;
-const isnb=document.getElementById('isnb').value;
+const isnb=document.getElementById('isbn').value;
 
 //kreiramo objekat book pomocu klase Book
 const book=new Book(title, author, isnb);
